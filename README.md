@@ -13,6 +13,7 @@ The cells live, die, or are born based on the status of their immediate 8 neighb
 
 
 `clang Conway.c Queue.c SmartAlloc.c -lpthread -o Conway`
+
 `./Conway < glidergun.in`
 
 ## Multithreading
