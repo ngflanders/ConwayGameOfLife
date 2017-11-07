@@ -14,3 +14,6 @@ The cells live, die, or are born based on the status of their immediate 8 neighb
 
 `clang Conway.c Queue.c SmartAlloc.c -lpthread -o Conway`
 `./Conway < glidergun.in`
+
+## Multithreading
+Picturing each `Generation` or cycle of the simulation as a new grid to be calculated, we split the grid into `Bands`. These `Bands` which need to be calculated are placed into a `Queue`, from which the various threads will take the next in line and calculate the new values of the cells. With careful use of Mutexes and Semaphores, the threads can properly calculate the new values, and know when a future `Generation`'s `Band` can be placed into the Queue.
